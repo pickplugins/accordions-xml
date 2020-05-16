@@ -9332,7 +9332,7 @@ function accordions_xml(){
 
     foreach ($items as $item):
 
-        if($post_count > 1) break;
+        //if($post_count > 1) break;
 
 
 
@@ -9431,6 +9431,8 @@ function accordions_xml(){
 
         $post_status = get_post_status($accordions_id);
 
+        var_dump($post_status);
+
         if($post_status == false  ){
 
             $my_post = array(
@@ -9456,13 +9458,9 @@ function accordions_xml(){
 
         }
 
-
-        $accordions_options = $postmeta['accordions_options'];
-
-        var_dump($item);
-        $accordions_options = $item['accordions_options'];
-
-        echo '<pre>'.var_export($accordions_options, true).'</pre>';
+        echo '####################### Update done for : ';
+        echo $post_title;
+        echo '#######################';
 
         $post_count++;
     endforeach;
